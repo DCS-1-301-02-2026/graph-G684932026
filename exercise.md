@@ -13,7 +13,9 @@ digraph {
     rankdir = "LR";
     node [shape=box];
 
-    "     コンピュータリテラシー    " -> "   プログラミングI  ";
+"    コンピュータリテラシー   "-> "    プログラミングI 　"-> "  プログラミングⅡ "  ;
+   　基礎ゼミ　-> 　プログラミング基礎I　->　プログラミング基礎Ⅱ　
+　情報工学概論　->　計算機工学　->　論理回路　;
 }
 ```
 
@@ -27,6 +29,19 @@ digraph {
 @startwbs ex02
 * 拓殖大学
 ** 商学部
+*** 経済学科
+*** 国際ビジネス学科
+*** 会計学科
+** 政経学部
+*** 法律政治学科
+*** 経済学科
+** 外国語学部
+*** 機械システム工学科
+*** 電子システム工学科
+*** 情報工学科
+*** デザイン学科
+** 国際学部
+*** 国際学科
 @endwbs
 ```
 
@@ -40,10 +55,26 @@ digraph {
 @startuml ex03
 left to right direction
 actor 学生 as student
+actor 教員 as teacher
 rectangle {
+    usecase 提出結果の採点 as uc8
+    usecase リモートリポジトリにpush as uc7
+    usecase 修正のコミット as uc6
+    usecase 修正をステージに上げる as uc5
+    usecase 課題ファイルの修正 as uc4
+    usecase リポジトリのクローン as uc3
     usecase "課題の受領" as uc2
+    usecase 課題の登録 as uc1
+
 }
 student --> uc2
+student --> uc6
+student --> uc4
+student --> uc5
+student --> uc7
+student --> uc3
+teacher --> uc1
+teacher --> uc8
 @enduml
 ```
 
@@ -53,8 +84,21 @@ student --> uc2
 独自の図解を作成せよ．対象は自由に決めてよいが，
 誰かのコピーにならないように留意せよ．
 
+```plantUML
+@startwbs ex02
+* 部活動
+** 体育部
+*** バスケットボール部
+*** サッカー部
+*** 野球部
+*** バレー部
+** 文化部
+*** 吹奏楽部
+*** 写真部
+*** 物理部
+@endwbs
 ```
-```
+
 
 
 ## チェック
