@@ -16,6 +16,7 @@ digraph {
 "    コンピュータリテラシー   "-> "    プログラミングI 　"-> "  プログラミングⅡ "  ;
    　基礎ゼミ　-> 　プログラミング基礎I　->　プログラミング基礎Ⅱ　
 　情報工学概論　->　計算機工学　->　論理回路　;
+　情報工学概論　-> 　プログラミング基礎I　;
 }
 ```
 
@@ -67,14 +68,15 @@ rectangle {
     usecase 課題の登録 as uc1
 
 }
+uc1 <-- teacher
 student --> uc2
 student --> uc6
 student --> uc4
 student --> uc5
 student --> uc7
 student --> uc3
-teacher --> uc1
-teacher --> uc8
+uc8 <-- teacher
+
 @enduml
 ```
 
